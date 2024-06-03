@@ -1,3 +1,7 @@
+import fetchDatas from './fetch.js';
+
+// const films = await fetchDatas();
+// console.log(films);
 const films = [
   {
     url: 'https://media.gqmagazine.fr/photos/622617a15f69a13708143038/16:9/w_1600,h_899,c_limit/avatar%20cover%202.jpg',
