@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  color: #d81f26;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100dvh;
+}
+
+.standby {
+  display: flex;
+  position: relative;
+  margin: auto;
+  height: 70dvh;
+  aspect-ratio: 16/9;
+  width: 80%;
+  overflow: hidden;
+}
+
+img {
+  width: 120%;
+  height: auto;
+  translate: -10%;
+  animation: translate-animation 15s both infinite;
+  aspect-ratio: 16/9;
+  z-index: 1;
+}
+
+.mask {
+  position: absolute;
+  display: block;
+  content: '';
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  color: green;
+  width: 100%;
+  z-index: 2;
+}
+
+.description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem;
+  color: white;
+  font-size: 3.5rem;
+  text-align: left;
+  background: linear-gradient(to top, black, transparent);
+  z-index: 2;
+}
+
+.title,
+.tags {
+  opacity: 0;
+}
+.title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  animation: mask-title 15s both infinite;
+}
+.tags {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  animation: mask-tags 15s both infinite;
+}
+.mask-animation {
+  animation: mask-animation 15s both infinite;
+}
+@keyframes translate-animation {
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes mask-animation {
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mask-title {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes mask-tags {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
