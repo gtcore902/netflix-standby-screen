@@ -24,16 +24,19 @@ h1 {
   display: flex;
   position: relative;
   margin: auto;
-  height: 70dvh;
+  /* height: 30dvh; */
   aspect-ratio: 16/9;
-  width: 80%;
+  /* width: 80%; */
+  min-width: 1066px;
+  max-width: 1066px;
   overflow: hidden;
 }
 
 img {
-  width: 120%;
+  min-width: 1280px;
+  max-width: 1280px;
   height: auto;
-  translate: -10%;
+  translate: -128px;
   animation: translate-animation 15s both infinite;
   aspect-ratio: 16/9;
   z-index: 1;
@@ -59,7 +62,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 3rem;
+  padding: 3.5rem;
   color: white;
   font-size: 3.5rem;
   text-align: left;
@@ -80,7 +83,7 @@ img {
 }
 .tags {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   animation: mask-tags 15s both infinite;
 }
 .mask-animation {

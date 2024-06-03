@@ -1,5 +1,9 @@
 import api_key from '../api_keys.js';
 
+/**
+ * Fetch datas from https://developer.themoviedb.org/reference/intro/getting-started api
+ * @returns {Object}
+ */
 const fetchDatas = async () => {
   try {
     const options = {
