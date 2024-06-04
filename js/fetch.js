@@ -4,7 +4,7 @@ import api_key from '../api_keys.js';
  * Fetch datas from https://developer.themoviedb.org/reference/intro/getting-started api
  * @returns {Object}
  */
-const fetchDatas = async () => {
+const fetchDatas = async (url) => {
   try {
     const options = {
       method: 'GET',
@@ -14,10 +14,7 @@ const fetchDatas = async () => {
         Authorization: 'Bearer ' + api_key,
       },
     };
-    const response = await fetch(
-      'https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1',
-      options
-    );
+    const response = await fetch(url, options);
     if (response.status === 404) {
       throw new Error('401, Unauthorized');
     }
@@ -25,7 +22,7 @@ const fetchDatas = async () => {
       throw new Error('500, Internal servor error');
     }
     const datas = await response.json();
-    return datas.results;
+    return datas;
   } catch (error) {
     console.log(error);
   }
