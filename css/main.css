@@ -37,7 +37,7 @@ img {
   max-width: 1280px;
   height: auto;
   translate: -128px;
-  animation: translate-animation 15s both infinite;
+  animation: translate-animation 15s linear both infinite alternate;
   aspect-ratio: 16/9;
   z-index: 1;
 }
