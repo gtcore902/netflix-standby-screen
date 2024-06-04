@@ -2,6 +2,7 @@ import api_key from '../api_keys.js';
 
 /**
  * Fetch datas from https://developer.themoviedb.org/reference/intro/getting-started api
+ * @param {string} url
  * @returns {Object}
  */
 const fetchDatas = async (url) => {
