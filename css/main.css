@@ -86,6 +86,12 @@ img {
   font-size: 1.5rem;
   animation: mask-tags 15s both infinite;
 }
+.stats {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  animation: mask-tags 14s 1s both infinite;
+}
 .mask-animation {
   animation: mask-animation 15s both infinite;
 }
