@@ -1,8 +1,8 @@
-# Netflix standby screen
-
-![Netflix's stanby screen](https://github.com/gtcore902/netflix-standby-screen/images/screenshot.png)
+![Netflix's stanby screen](./images/screenshot.png)
 
 This project is a simple movie carousel that fetches movie data from an external source and displays it on a webpage with a rotating animation. Each movie's backdrop image, title, and genres are displayed and updated every 15 seconds.
+
+# Netflix standby screen
 
 ## Table of Contents
 
