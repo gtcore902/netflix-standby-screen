@@ -14,7 +14,7 @@ const statContainer = document.createElement('p');
 const moviesLength = films.length;
 let currentState = 0;
 
-console.log(films.filter((films) => films.vote_average > 7));
+// console.log(films.filter((films) => films.vote_average > 7));
 /**
  * Generate genre from id
  * @param {number} id
@@ -76,7 +76,6 @@ const animation = () => {
     topFilmContent();
   }
   currentState += 1;
-  console.log(currentState);
   // Loop with this animation
   setTimeout(animation, 15000);
 };
