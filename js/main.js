@@ -5,7 +5,7 @@ let films = await fetchDatas(moviesUrl);
 films = films.results;
 let genres = await fetchDatas(genresUrl);
 genres = genres.genres;
-let descriptionElement = document.querySelector('.description');
+let descriptionElement = document.querySelector('.content__description');
 let imageElement = document.querySelector('.image');
 let titleElement = document.querySelector('.title');
 let tagsElement = document.querySelector('.tags');
@@ -38,18 +38,14 @@ const topFilmContent = () => {
   thumbText.classList.add('thumb__element--text');
   thumbStats.classList.add('thumb__element');
   thumbStats.classList.add('thumb__element--stats');
-  thumbLogo.classList.add('thumb__element');
-  thumbLogo.classList.add('thumb__element--logo');
   thumbDetail.classList.add('thumb__element');
   thumbDetail.classList.add('thumb__element--detail');
   thumbText.innerHTML = '&#128077;';
   thumbDetail.innerHTML = 'Parmi les plus aimés - ';
   thumbStats.innerHTML = 'Un des films ayant reçu le plus de pouces levés.';
-  thumbLogo.innerHTML = 'n';
   thumb.appendChild(thumbText);
   thumb.appendChild(thumbDetail);
   thumb.appendChild(thumbStats);
-  thumb.appendChild(thumbLogo);
   descriptionElement.appendChild(thumb);
   return descriptionElement;
 };
@@ -74,7 +70,7 @@ const animation = () => {
     index <= films[currentState].genre_ids.length - 2 &&
       (tagsElement.textContent += ' - ');
   });
-  if (films[currentState].vote_average > 7) {
+  if (films[currentState].vote_average > 1) {
     statContainer.innerHTML = '&#128077; Parmi les plus aimés';
     statContainer.classList.add('stats');
     topFilmContent();
