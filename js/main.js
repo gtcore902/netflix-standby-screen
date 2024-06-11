@@ -9,6 +9,7 @@ let descriptionElement = document.querySelector('.description');
 let imageElement = document.querySelector('.image');
 let titleElement = document.querySelector('.title');
 let tagsElement = document.querySelector('.tags');
+const thumb = document.createElement('div');
 const statContainer = document.createElement('p');
 const moviesLength = films.length;
 let currentState = 0;
@@ -25,6 +26,34 @@ function generateNameById(id) {
 }
 
 /**
+ * Generate top film content
+ */
+const topFilmContent = () => {
+  const thumbText = document.createElement('span');
+  const thumbDetail = document.createElement('span');
+  const thumbStats = document.createElement('span');
+  const thumbLogo = document.createElement('span');
+  thumb.classList.add('thumb');
+  thumbText.classList.add('thumb__element');
+  thumbText.classList.add('thumb__element--text');
+  thumbStats.classList.add('thumb__element');
+  thumbStats.classList.add('thumb__element--stats');
+  thumbLogo.classList.add('thumb__element');
+  thumbLogo.classList.add('thumb__element--logo');
+  thumbDetail.classList.add('thumb__element');
+  thumbDetail.classList.add('thumb__element--detail');
+  thumbText.innerHTML = '&#128077;';
+  thumbDetail.innerHTML = 'Parmi les plus aimés - ';
+  thumbStats.innerHTML = 'Un des films ayant reçu le plus de pouces levés.';
+  thumbLogo.innerHTML = 'n';
+  thumb.appendChild(thumbText);
+  thumb.appendChild(thumbDetail);
+  thumb.appendChild(thumbStats);
+  thumb.appendChild(thumbLogo);
+  descriptionElement.appendChild(thumb);
+  return descriptionElement;
+};
+/**
  * Displaying informations about movies and animate it
  */
 const animation = () => {
@@ -32,10 +61,9 @@ const animation = () => {
   if (currentState >= moviesLength) {
     currentState = 0;
   }
-
+  thumb.innerHTML = '';
   tagsElement.textContent = '';
   imageElement.src = '';
-  statContainer.textContent = '';
   imageElement.src =
     'https://image.tmdb.org/t/p/w1280/' + films[currentState].backdrop_path;
 
@@ -46,12 +74,13 @@ const animation = () => {
     index <= films[currentState].genre_ids.length - 2 &&
       (tagsElement.textContent += ' - ');
   });
-  if (films[currentState].vote_average > 7) {
-    statContainer.innerHTML = '&#128077; <em>Film dans le top 10</em>';
+  if (films[currentState].vote_average > 1) {
+    statContainer.innerHTML = '&#128077; Parmi les plus aimés';
     statContainer.classList.add('stats');
-    descriptionElement.appendChild(statContainer);
+    topFilmContent();
   }
   currentState += 1;
+  console.log(currentState);
   // Loop with this animation
   setTimeout(animation, 15000);
 };

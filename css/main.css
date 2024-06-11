@@ -86,12 +86,42 @@ img {
   font-size: 1.5rem;
   animation: mask-tags 15s both infinite;
 }
-.stats {
+.thumb {
+  display: flex;
+  align-items: center;
+  color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
-  margin-top: 1rem;
   animation: mask-tags 14s 1s both infinite;
 }
+
+.thumb__element {
+  display: flex;
+}
+.thumb__element--text {
+  border-radius: 2px;
+  margin-right: 5px;
+  background-color: #d81f26;
+}
+.thumb__element--detail {
+  font-weight: 600;
+}
+.thumb__element--stats {
+  font-size: 1rem;
+  margin-left: 5px;
+  font-weight: normal;
+}
+.thumb__element--logo {
+  flex: 1;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  color: #d81f26;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.8rem;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
 .mask-animation {
   animation: mask-animation 15s both infinite;
 }
