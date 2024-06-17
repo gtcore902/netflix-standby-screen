@@ -14,7 +14,6 @@ h1 {
   font-style: normal;
   font-size: 5rem;
   color: var(--red);
-  /* text-shadow: 2px 2px black; */
 }
 .container {
   display: flex;
@@ -24,7 +23,6 @@ h1 {
   text-align: center;
   height: 100dvh;
 }
-
 .main {
   display: flex;
   flex-direction: column;
@@ -33,17 +31,12 @@ h1 {
   flex: 2;
 }
 .standby {
-  /* display: flex;  */ /* hmmm */
   position: relative;
-  /* margin: auto; */
-  /* height: 30dvh; */
   aspect-ratio: 16/9;
-  /* width: 80%; */
   min-width: 1066px;
   max-width: 1066px;
   overflow: hidden;
 }
-
 img {
   min-width: 1280px;
   max-width: 1280px;
@@ -53,7 +46,6 @@ img {
   aspect-ratio: 16/9;
   z-index: 1;
 }
-
 .mask {
   position: absolute;
   display: block;
@@ -67,7 +59,6 @@ img {
   width: 100%;
   z-index: 2;
 }
-
 .content {
   position: absolute;
   left: 0;
@@ -95,9 +86,7 @@ img {
   font-size: 4rem;
   padding-bottom: 2rem;
   padding-right: 3.5rem;
-  /* animation: mask-title 15s both infinite; */
 }
-
 .type {
   display: flex;
   align-items: center;
@@ -140,7 +129,6 @@ img {
   font-size: 1.2rem;
   animation: mask-tags 14s 1s both infinite;
 }
-
 .thumb__element {
   display: flex;
 }
@@ -157,7 +145,6 @@ img {
   margin-left: 5px;
   font-weight: normal;
 }
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -167,6 +154,7 @@ img {
   background: black;
   color: white;
   letter-spacing: 0.3rem;
+  margin-top: 5rem;
 }
 .footer__link {
   display: block;
@@ -178,6 +166,96 @@ img {
 .mask-animation {
   animation: mask-animation 15s both infinite;
 }
+
+/* ==== MEDIA QUERIES ==== */
+
+@media all and (max-width: 1100px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .standby {
+    min-width: 566px;
+    max-width: 566px;
+  }
+  .image {
+    min-width: 780px;
+    max-width: 780px;
+  }
+  .content__description {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+  .content__logo {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+  .title {
+    letter-spacing: 0.3rem;
+  }
+  .type {
+    font-size: 0.7rem;
+  }
+  .type__logo {
+    font-size: 2rem;
+  }
+  .tags {
+    font-size: 0.7rem;
+  }
+  .thumb {
+    font-size: 0.7rem;
+    margin-top: 8px;
+  }
+  .thumb__element--stats {
+    font-size: 0.6rem;
+  }
+}
+
+@media all and (max-width: 580px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .standby {
+    min-width: 320px;
+    max-width: 320px;
+  }
+  .image {
+    min-width: 441px;
+    max-width: 441px;
+  }
+  .content__description {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+  .content__logo {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+  .title {
+    letter-spacing: 0.3rem;
+  }
+  .type {
+    font-size: 0.4rem;
+  }
+  .type__logo {
+    font-size: 1rem;
+  }
+  .tags {
+    font-size: 0.4rem;
+  }
+  .thumb {
+    font-size: 0.4rem;
+    margin-top: 4px;
+  }
+  .thumb__element--stats {
+    font-size: 0.4rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ==== ANIMATIONS ==== */
 @keyframes translate-animation {
   to {
     translate: 0;
