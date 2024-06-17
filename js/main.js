@@ -14,7 +14,44 @@ const statContainer = document.createElement('p');
 const moviesLength = films.length;
 let currentState = 0;
 
-// console.log(films.filter((films) => films.vote_average > 7));
+/**
+ * Display message for best EXP if screens < 580 px
+ */
+const displayScreenAlert = () => {
+  if (screen.width < 581) {
+    if (!document.getElementById('screen-alert')) {
+      const styles = {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+        color: '#d81f26',
+        background: 'black',
+        padding: '1rem',
+        fontSize: '1.2rem',
+      };
+      const messageParagraph = document.createElement('p');
+      messageParagraph.id = 'screen-alert';
+      messageParagraph.textContent =
+        'Best experience with screens > 580 pixels';
+      Object.entries(styles).map(
+        ([property, value]) => (messageParagraph.style[property] = value)
+      );
+      document.body.appendChild(messageParagraph);
+    }
+  }
+};
+displayScreenAlert();
+
+window.addEventListener('resize', () => {
+  screen.width < 581 && displayScreenAlert();
+  screen.width >= 581 &&
+    (document.getElementById('screen-alert')
+      ? document.body.removeChild(document.getElementById('screen-alert'))
+      : null);
+});
+
 /**
  * Generate genre from id
  * @param {number} id

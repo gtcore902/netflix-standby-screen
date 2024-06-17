@@ -16,12 +16,14 @@ h1 {
   color: var(--red);
 }
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   height: 100dvh;
+  overflow: hidden;
 }
 .main {
   display: flex;
@@ -37,7 +39,7 @@ h1 {
   max-width: 1066px;
   overflow: hidden;
 }
-img {
+.image {
   min-width: 1280px;
   max-width: 1280px;
   height: auto;
@@ -163,10 +165,23 @@ img {
   margin: 0.5rem auto;
   padding: 0.2rem;
 }
-.mask-animation {
-  animation: mask-animation 15s both infinite;
+.github-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7rem;
+  height: 7rem;
+  background: black;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
-
+.github-link__image {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  translate: 25% -25%;
+  width: 25%;
+  cursor: pointer;
+}
 /* ==== MEDIA QUERIES ==== */
 
 @media all and (max-width: 1100px) {
@@ -253,9 +268,15 @@ img {
     font-size: 0.8rem;
     padding: 1.5rem;
   }
+  .github-link {
+    display: none;
+  }
 }
 
 /* ==== ANIMATIONS ==== */
+.mask-animation {
+  animation: mask-animation 15s both infinite;
+}
 @keyframes translate-animation {
   to {
     translate: 0;
