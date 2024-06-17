@@ -107,7 +107,7 @@ const animation = () => {
     index <= films[currentState].genre_ids.length - 2 &&
       (tagsElement.textContent += ' - ');
   });
-  if (films[currentState].vote_average > 1) {
+  if (films[currentState].vote_average > 6) {
     statContainer.innerHTML = '&#128077; Parmi les plus aimés';
     statContainer.classList.add('stats');
     topFilmContent();

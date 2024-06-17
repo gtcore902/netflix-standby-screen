@@ -16,14 +16,12 @@ h1 {
   color: var(--red);
 }
 .container {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   height: 100dvh;
-  overflow: hidden;
 }
 .main {
   display: flex;
